@@ -1,0 +1,38 @@
+﻿using System;
+using TerritoryClasses;
+
+namespace Territory
+{
+	public class Game
+	{
+        private static Game gameinstance;
+        public static Game GameInstance
+        {
+            get
+            {
+                if (gameinstance == null)
+                {
+                    gameinstance = new Game();
+                }
+                return gameinstance;
+            }
+        }
+
+        public int round;
+		public int mapPosition;
+
+
+        public void GameSetUp()
+		{
+			round = 0;
+			mapPosition = 4;
+		}
+
+        public int GetNextRound()
+        {
+			round++;
+			return round;
+        }
+    }
+}
+
